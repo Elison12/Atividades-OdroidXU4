@@ -1,0 +1,31 @@
+------Funcoes basicas de leitura e escrita da lib wiringPi------
+
+1 - wiringPiSetup()
+Função: Inicializa o sistema WiringPi.
+
+2 - pinMode()
+Função: Configura um pino como entrada ou saída.
+	Exemplo: 	
+            pinMode(PIN_LEITURA, INPUT);
+            pinMode(LED, OUTPUT);
+
+3 - digitalRead()
+Função: Lê o valor digital de um pino de entrada
+	Exemplo: 
+            int setPressed = (digitalRead(PIN_LEITURA) == LOW);
+
+3 - digitalWrite()
+Função: Escreve um valor digital (HIGH/LOW) em um pino de saída
+	Exemplo: 
+            digitalWrite(PIN_Constant, HIGH);
+
+4 - pullUpDnControl()
+Função: Função: Configura o resistor de pull-up/pull-down interno de um pino.
+	Exemplo: 
+            pullUpDnControl(PIN_LEITURA, PUD_UP);
+
+Exemplo de código:
+$fliflopSR.c
+
+Compilação: gcc -o nomeSaida nomeArquivo.c $(pkg-config --cflags --libs libwiringpi2)
+Execução: ./nomeSaida
